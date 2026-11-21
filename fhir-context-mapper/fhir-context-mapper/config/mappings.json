@@ -1,0 +1,53 @@
+{
+  "systems": {
+    "hospital_a": {
+      "identifier_system": "http://hospital-a.example.org/mrn",
+      "date_formats": ["%d/%m/%Y", "%d/%m/%Y %H:%M"],
+      "lab_units": {"GLU": "mg/dL", "CHOL": "mg/dL", "HGB": "g/dL", "A1C": "%", "SBP": "mmHg"}
+    },
+    "hospital_b": {
+      "identifier_system": "http://hospital-b.example.org/patient-id",
+      "date_formats": ["%m-%d-%Y", "%m-%d-%Y %H:%M"],
+      "lab_units": {"GLU": "mmol/L", "CHOL": "mmol/L", "HGB": "g/L", "A1C": "%", "SBP": "mmHg"}
+    }
+  },
+  "local_codes": {"GLU": "2339-0", "CHOL": "2093-3", "HGB": "718-7", "A1C": "4548-4", "SBP": "8480-6"},
+  "gender_map": {
+    "m": "male", "male": "male", "1": "male",
+    "f": "female", "female": "female", "2": "female",
+    "o": "other", "other": "other", "u": "unknown", "unknown": "unknown"
+  },
+  "loinc": {
+    "2339-0": {"display": "Glucose [Mass/volume] in Blood", "unit": "mg/dL", "ranges": {"default": [70, 99]}},
+    "2093-3": {"display": "Cholesterol [Mass/volume] in Serum or Plasma", "unit": "mg/dL", "ranges": {"default": [0, 200]}},
+    "718-7":  {"display": "Hemoglobin [Mass/volume] in Blood", "unit": "g/dL", "ranges": {"male": [13.5, 17.5], "female": [12.0, 15.5], "default": [12.0, 17.5]}},
+    "4548-4": {"display": "Hemoglobin A1c/Hemoglobin.total in Blood", "unit": "%", "ranges": {"default": [4.0, 5.6]}},
+    "8480-6": {"display": "Systolic blood pressure", "unit": "mm[Hg]", "ranges": {"default": [90, 120]}}
+  },
+  "ucum": {"mg/dL": "mg/dL", "g/dL": "g/dL", "%": "%", "mmHg": "mm[Hg]", "mm[Hg]": "mm[Hg]"},
+  "conversions": {
+    "2339-0": {"mmol/L": 18.016},
+    "2093-3": {"mmol/L": 38.67},
+    "718-7": {"g/L": 0.1}
+  },
+  "field_aliases": {
+    "patient": {
+      "id": ["mrn", "patientid", "id"],
+      "given": ["firstname", "givenname", "first"],
+      "family": ["lastname", "surname", "familyname", "family"],
+      "fullname": ["fullname", "patientname", "name"],
+      "gender": ["sex", "gender"],
+      "birthdate": ["dob", "birthdate", "dateofbirth"],
+      "phone": ["phone", "mobile", "telephone"],
+      "city": ["city", "town"]
+    },
+    "observation": {
+      "patient_id": ["patientid", "mrn", "subject"],
+      "code": ["testcode", "code", "loinc"],
+      "value": ["value", "result"],
+      "unit": ["unit", "units", "uom"],
+      "datetime": ["collected", "effectivedate", "date", "timestamp"],
+      "status": ["status"]
+    }
+  }
+}

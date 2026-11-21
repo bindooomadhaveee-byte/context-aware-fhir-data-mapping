@@ -1,0 +1,8 @@
+[
+  {"source_system": "hospital_a", "mrn": "A100", "test_code": "GLU", "result": "112", "collected": "10/05/2025 08:30"},
+  {"source_system": "hospital_a", "mrn": "A101", "test_code": "HGB", "result": "12.9", "collected": "10/05/2025"},
+  {"source_system": "hospital_a", "mrn": "A100", "test_code": "HGB", "result": "12.9", "collected": "10/05/2025"},
+  {"source_system": "hospital_b", "PatientID": "B200", "TestCode": "GLU", "Result": "5.4", "Collected": "05-10-2025 09:00"},
+  {"source_system": "hospital_b", "PatientID": "B201", "TestCode": "HGB", "Result": "135", "Collected": "05-10-2025"},
+  {"source_system": "hospital_b", "PatientID": "B201", "TestCode": "XYZ", "Result": "1", "Collected": "05-10-2025"}
+]

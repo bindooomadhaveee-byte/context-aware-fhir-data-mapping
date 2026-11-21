@@ -1,0 +1,463 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "A100",
+        "identifier": [
+          {
+            "system": "http://hospital-a.example.org/mrn",
+            "value": "A100"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": [
+              "Jane"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1985-03-15",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-9000000001"
+          }
+        ],
+        "address": [
+          {
+            "city": "Hyderabad"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/A100"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "A101",
+        "identifier": [
+          {
+            "system": "http://hospital-a.example.org/mrn",
+            "value": "A101"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Kumar",
+            "given": [
+              "Ravi"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1978-11-02",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+91-9000000002"
+          }
+        ],
+        "address": [
+          {
+            "city": "Secunderabad"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/A101"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "B200",
+        "identifier": [
+          {
+            "system": "http://hospital-b.example.org/patient-id",
+            "value": "B200"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Smith",
+            "given": [
+              "Anna"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1990-07-21",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+1-555-0100"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/B200"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "B201",
+        "identifier": [
+          {
+            "system": "http://hospital-b.example.org/patient-id",
+            "value": "B201"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Miller",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-12-05",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+1-555-0101"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/B201"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-A100-2339-0-0",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/A100"
+        },
+        "valueQuantity": {
+          "value": 112.0,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "effectiveDateTime": "2025-05-10T08:30:00",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL"
+            },
+            "high": {
+              "value": 99,
+              "unit": "mg/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/obs-A100-2339-0-0"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-A101-718-7-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/A101"
+        },
+        "valueQuantity": {
+          "value": 12.9,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "effectiveDateTime": "2025-05-10",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 13.5,
+              "unit": "g/dL"
+            },
+            "high": {
+              "value": 17.5,
+              "unit": "g/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/obs-A101-718-7-1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-A100-718-7-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/A100"
+        },
+        "valueQuantity": {
+          "value": 12.9,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "effectiveDateTime": "2025-05-10",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 12.0,
+              "unit": "g/dL"
+            },
+            "high": {
+              "value": 15.5,
+              "unit": "g/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/obs-A100-718-7-2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-B200-2339-0-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/B200"
+        },
+        "valueQuantity": {
+          "value": 97.29,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "effectiveDateTime": "2025-05-10T09:00:00",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL"
+            },
+            "high": {
+              "value": 99,
+              "unit": "mg/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/obs-B200-2339-0-3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-B201-718-7-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/B201"
+        },
+        "valueQuantity": {
+          "value": 13.5,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "effectiveDateTime": "2025-05-10",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 13.5,
+              "unit": "g/dL"
+            },
+            "high": {
+              "value": 17.5,
+              "unit": "g/dL"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/obs-B201-718-7-4"
+      }
+    }
+  ]
+}
